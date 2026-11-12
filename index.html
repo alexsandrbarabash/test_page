@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Harbor Street Bakery</title></head>
+<body>
+  <h1>Harbor Street Bakery</h1>
+  <p>We bake everything fresh each morning.</p>
+
+  <!-- Дефект 1: французька без lang -->
+  <p id="slogan">Notre pain est cuit chaque matin avec amour et patience.</p>
+
+  <!-- Дефект 2: lang не збігається з мовою (іспанська позначена як німецька) -->
+  <p id="menu-note" lang="de">Hoy ofrecemos pan de masa madre y empanadas.</p>
+
+  <!-- Дефект 3: невалідний subtag -->
+  <p id="greeting" lang="xx">Bonjour et bienvenue dans notre boulangerie.</p>
+
+  <!-- Позитивний контроль: правильно, не має бути у findings -->
+  <blockquote id="review" lang="it">Il miglior pane della città.</blockquote>
+
+  <!-- Позитивний контроль: lang успадкований від предка -->
+  <div lang="ja"><p id="jp-note"><span>営業時間は午前七時からです。</span></p></div>
+</body>
+</html>
