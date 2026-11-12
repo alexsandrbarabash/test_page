@@ -3,21 +3,31 @@
 <head><meta charset="utf-8"><title>Harbor Street Bakery</title></head>
 <body>
   <h1>Harbor Street Bakery</h1>
-  <p>We bake everything fresh each morning.</p>
+  <p>We bake everything fresh each morning and sell it at our shop on Harbor Street.</p>
 
-  <!-- Дефект 1: французька без lang -->
-  <p id="slogan">Notre pain est cuit chaque matin avec amour et patience.</p>
+  <!-- 1: одна іншомовна фраза всередині англійського речення, без lang -->
+  <p>Opening hours: weekdays 7 to 5. <span id="closed">Fermé le lundi et le dimanche.</span></p>
 
-  <!-- Дефект 2: lang не збігається з мовою (іспанська позначена як німецька) -->
-  <p id="menu-note" lang="de">Hoy ofrecemos pan de masa madre y empanadas.</p>
+  <!-- 2: іспанська в alt -->
+  <img id="hero" alt="Pan de masa madre recién horneado"
+       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
 
-  <!-- Дефект 3: невалідний subtag -->
-  <p id="greeting" lang="xx">Bonjour et bienvenue dans notre boulangerie.</p>
+  <!-- 3: німецька в aria-label -->
+  <button id="order" aria-label="Jetzt online bestellen">Order</button>
 
-  <!-- Позитивний контроль: правильно, не має бути у findings -->
-  <blockquote id="review" lang="it">Il miglior pane della città.</blockquote>
+  <!-- 4: підкреслення замість дефіса -->
+  <p id="fr-underscore" lang="fr_FR">Notre pain est cuit chaque matin avec amour.</p>
 
-  <!-- Позитивний контроль: lang успадкований від предка -->
-  <div lang="ja"><p id="jp-note"><span>営業時間は午前七時からです。</span></p></div>
+  <!-- 5: порожній lang -->
+  <p id="empty-lang" lang="">Buon appetito a tutti i nostri clienti.</p>
+
+  <!-- 6: lang на предку, але мова не та -->
+  <section lang="es">
+    <p id="wrong-ancestor">Nos croissants sont faits maison chaque jour.</p>
+  </section>
+
+  <!-- Контролі: НЕ мають бути знайдені -->
+  <p id="loanwords">Try our café au lait and the sushi special.</p>
+  <blockquote id="good-it" lang="it">Il miglior pane della città.</blockquote>
 </body>
 </html>
